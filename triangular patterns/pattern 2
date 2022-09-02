@@ -1,0 +1,36 @@
+"""
+example 1:
+input = 4
+output :
+1
+23
+456
+78910
+
+example2:
+input : 5
+output:
+1
+23
+456
+78910
+1112131415
+
+"""
+
+
+n = int(input('enter the number:'))
+count = 2
+a = 1
+for i in range(1,n+1):
+    if i == 1:
+        print(i)
+    else:
+        a = count
+        count = count + i
+        for j in range(a,count):
+            print(j,end="")
+        print()
+
+
+
