@@ -17,3 +17,17 @@ for i in range(n,0,-1):
     for j in range(i):
         print("*",end="")
     print()
+
+
+
+
+# while loop
+n = int(input('enter:'))
+i = n
+while i>=1:
+    j = i
+    while j>=1:
+        print("*",end="")
+        j = j - 1
+    print()
+    i = i - 1
