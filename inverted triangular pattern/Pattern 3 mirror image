@@ -15,6 +15,7 @@ for i in range(1,n+1):
     print(' '*(n-i) + "*"*i)
 
 
+
 # Approach 2  while loop  (my approach)
 n = int(input('enter:'))
 i = 1
@@ -22,3 +23,21 @@ while i <= n:
     print(' '*(n-i) + "*"*i)
     i = i + 1
 
+
+
+
+# while loop (my approach and original solution)
+n = int(input('enter:'))
+i = 1
+while i <= n:
+    p = n-i
+    j = 1         # j represents the spaces
+    k = 1         # k represents the stars to be printed
+    while j <= p:
+        print(' ',end="")
+        j = j + 1
+    while k <= i:
+        print('*',end="")
+        k = k + 1
+    print()
+    i = i + 1
