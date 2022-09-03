@@ -21,7 +21,7 @@ for i in range(n,0,-1):
 
 
 
-# while loop
+# Using while loop
 n = int(input('enter:'))
 i = n
 while i>=1:
