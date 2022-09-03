@@ -40,3 +40,19 @@ while i <=n:
         p = p + 1
     print()
     i = i+1
+
+
+    
+# using while loop Approach 2
+n = int(input('enter: '))
+i = 1
+while i <= n:
+    p = i
+    j = 1
+    while p<i+i:
+        print(p,end="")
+        j = j + 1
+        p = p + 1
+    print()
+    i = i + 1
+
