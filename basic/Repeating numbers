@@ -24,7 +24,7 @@ Sample Output :
 
 
 
-# code starts here
+# code starts here      (my approach)
 
 N = int(input('Enter total number of rows: '))
 lis = [1,2,3,4,5,6,7,8,9]
