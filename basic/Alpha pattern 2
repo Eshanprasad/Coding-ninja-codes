@@ -1,0 +1,19 @@
+"""
+input: 5
+output:
+A
+AB
+ABC
+ABCD
+ABCDE
+"""
+
+n = int(input())
+alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+list= []
+for i in alphabets:
+    list.append(i)
+for i in range(1,n+1):
+    for j in range(i):
+        print(list[j],end="")
+    print()
