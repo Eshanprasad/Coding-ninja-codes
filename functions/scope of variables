@@ -73,7 +73,7 @@ NameError: name 'c1' is not defined. Did you mean: 'b1'?                # As c1 
 
 
 
-# code 4
+# code 4    *****************************important
 a1 = 13
 def f1():
     a1 = 12                         # python assumes that we are creating a local variable inside the function(with same name as global variable) 
@@ -94,3 +94,61 @@ output:
 """
 here if we want to just access the global variable inside the function(just like code 2 ), there is no problem. 
 But if we want to change the global variable inside the function, by deault python assumes that we are creating a local variable inside the function(with same name as global variable) 
+"""
+
+
+# to verify the above statement
+a1 = 13
+def f1():
+    a1 = 12
+    print(a1, id(a1))           # this prints different id
+
+print(a1, id(a1))
+f1()
+print(a1, id(a1))
+
+"""
+output:
+13 2091838538352
+12 2091838538320                   #  as python assumes that we're creating a local variable, its id is different
+13 2091838538352
+"""
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# code ( how to change the global variable inside the function )
+a1 = 13
+def f1():
+    global a1
+    a1 = 12
+    print(a1, id(a1))
+
+
+print(a1, id(a1))
+f1()
+print(a1, id(a1))
+
+
+"""
+output:
+13 1974362702448
+12 1974362702416
+12 1974362702416
+"""
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# code (to access local variables outside the function)
+def f():
+    b = 10
+    return b
+x = f()
+print(x)
+
+
+"""
+output:
+10
+"""
