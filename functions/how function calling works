@@ -13,3 +13,14 @@ def c():
     print('C ends')
 
 a()
+
+
+"""
+output:
+A starts
+B starts
+C starts
+C ends
+B ends
+A ends
+"""
