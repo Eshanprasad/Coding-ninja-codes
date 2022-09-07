@@ -1,0 +1,9 @@
+def is_prime(n):
+    for i in range(2,n):
+        if n%i==0:
+            break                         # else condition will not be executed if the for for loop hits the break statement
+    else:
+        return True                    # this else block will only be executed if the'if' condition in the for loop does not satisfy.
+    return False
+    
+    # as soon as the function hits any of the 'return' mentioned in the function, it exits the function
