@@ -1,0 +1,15 @@
+def a():
+    print('A starts')
+    b()
+    print('A ends')
+
+def b():
+    print('B starts')
+    c()
+    print('B ends')
+
+def c():
+    print('C starts')
+    print('C ends')
+
+a()
