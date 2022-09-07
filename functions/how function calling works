@@ -24,3 +24,4 @@ C ends
 B ends
 A ends
 """
+# thus the function calling works as "First in last Out"
