@@ -1,0 +1,36 @@
+"""
+input: 6
+output:
+123456
+ 23456
+  3456
+   456
+    56
+     6
+    56
+   456
+  3456
+ 23456
+123456
+"""
+
+# code starts here (my approach)
+n = int(input('Enter the number:'))
+for i in range(1, n+1):
+    for space in range(1, i):
+        print(" ", end="")
+    for j in range(i, n+1):
+        print(j, end="")
+    print()
+z = n-2
+y = n-1
+for a in range(1,n):
+    print(" " * z, end="")
+    z = z-1
+    for j in range(y,n+1):
+        print(j,end="")
+    y = y - 1
+    print()
+
+
+
