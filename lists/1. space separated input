@@ -1,3 +1,11 @@
+"""
+input:
+5
+1 2 3 4 5
+"""
+
+
+
 n = int(input('enter the number of elements in a list: '))       # contains number of elements in a list
 elements = input('enter the list: ')                             # contains elements of a list separated by spaces
 our_list = [int(a) for a in elements.split(' ')]                 # we can also use: our_list = [int(a) for a in elements.split()]    <-- this split() will automatically splits the given string on basis of spaces
