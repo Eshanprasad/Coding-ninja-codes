@@ -1,0 +1,26 @@
+"""
+question:
+find whether the given number is present in list. if present, print the index of that number.
+If not present, print -1
+
+input format:
+5                    # number of elements in a list
+1 2 3 4 5            # elements in a list
+4                    # element to be found
+
+"""
+
+
+
+n = int(input('enter the number of elements in a list: '))       # contains number of elements in a list
+elements_list = [int(x) for x in input().split()]
+to_be_found = int(input())
+is_found = False
+for i in range(len(elements_list)):
+    if elements_list[i] == to_be_found:
+        print(i)
+        is_found = True
+        break
+
+if is_found is False:
+    print(-1)
