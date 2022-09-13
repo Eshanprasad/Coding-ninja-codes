@@ -1,0 +1,27 @@
+n = int(input('enter the number of elements in a list: '))       # contains number of elements in a list
+elements = input('enter the list: ')                             # contains elements of a list separated by spaces
+our_list = [int(a) for a in elements.split(' ')]                 # we can also use: our_list = [int(a) for a in elements.split()]    <-- this split() will automatically splits the given string on basis of spaces
+print(our_list)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# approach 2
+
+n = int(input('enter the number of elements in a list: '))       # contains number of elements in a list
+elements_list = [int(x) for x in input().split()]
+print(elements_list)                                             #output: [1, 2, 3, 4, 5]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# approach 3
+n = int(input('enter the number of elements in a list: '))       # contains number of elements in a list
+elements = input('enter the list: ')                             # contains elements of a list separated by spaces
+str_split = elements.split()                                     # output : ['1', '2', '3', '4', '5']
+l = []
+# converting elements of list into integer type
+for ele in str_split:
+    l.append(int(ele))
+print(l)                                                         #output: [1, 2, 3, 4, 5]
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
