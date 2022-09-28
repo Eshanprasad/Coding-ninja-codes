@@ -1,0 +1,20 @@
+# my approach
+# binary search
+arr = [1,3,7,18,20,21,27,31,33,47,48,51,55,57,59,68,70,77,79,83,86,88,91,96,100]
+to = int(input('enter element to be found: '))
+start = 0
+end = len(arr) -1
+while start<=end:
+    mid = (start + end) // 2
+    if arr[mid]==to:
+        print(mid)
+        break
+    elif arr[mid]>to:       #left
+        end = mid-1
+        mid = (start + end) // 2
+    elif arr[mid]<to:        # right
+        start = mid+1
+        end = len(arr)-1
+        mid = (start + end) // 2
+else:
+    print('not present in list')
