@@ -3,7 +3,7 @@ sort_array = [li[0]]
 unsorted_array = li[1:]
 for ele in unsorted_array:
     for j in range(len(sort_array)):
-        if ele > sort_array[len(sort_array)-1]:
+        if ele > sort_array[-1]:
             sort_array.append(ele)
             break
         elif ele < sort_array[j]:
