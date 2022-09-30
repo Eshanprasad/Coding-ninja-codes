@@ -1,0 +1,16 @@
+li = [9, 8, 5, 6, 7, 1, 4 , 6, 88, 32, 12, 5, 8, 71,100]
+sort_array = [li[0]]
+unsorted_array = li[1:]
+for ele in unsorted_array:
+    for j in range(len(sort_array)):
+        if ele > sort_array[len(sort_array)-1]:
+            sort_array.append(ele)
+            break
+        elif ele < sort_array[j]:
+            if j == 0:
+                sort_array.insert(0, ele)
+                break
+            else:
+                sort_array.insert(j, ele)
+                break
+print(sort_array)
