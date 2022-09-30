@@ -18,3 +18,26 @@ while start<=end:
         mid = (start + end) // 2
 else:
     print('not present in list')
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+# my approach 2
+li = [0,2, 3, 9, 23, 34, 49, 53, 65, 69, 74]
+to = int(input("Enter a number to be found: "))
+start = 0
+end = len(li)-1
+mid = (start+end)//2
+while start<=end:
+    if li[mid]==to:
+        print("index of the number is:",mid)
+        break
+    elif to<li[mid]:
+        end = mid-1
+        mid = (start+end)//2
+    elif li[mid]<to:
+        start = mid+1
+        mid = (start + end) // 2
+else:
+    print("number is not in the list")
