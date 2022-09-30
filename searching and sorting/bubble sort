@@ -1,0 +1,10 @@
+# my approach 
+li = [6,4 ,8, 3, 1, 2,2 , 0, 3, 1]
+l = len(li)
+for i in range(len(li)):
+    for j in range(len(li)-i-1):
+        if li[j]>li[j+1]:
+            li[j], li[j+1] = li[j+1], li[j]
+print(li)
+
+# output : [0, 1, 1, 2, 2, 3, 3, 4, 6, 8]
