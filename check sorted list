@@ -1,0 +1,16 @@
+# check whether the given list is sorted or not
+
+l = [1,2,3,4,5,2]
+minn = None
+f = False
+for j in range(len(l)):
+    minn = l[j]      #assume
+    for i in range(j,len(l)):
+        if l[i]<minn:
+            print("not sorted")
+            f = True
+            break
+    if f == True:
+        break
+else:
+    print("sorted")
