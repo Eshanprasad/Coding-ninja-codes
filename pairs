@@ -1,0 +1,13 @@
+arr = [1, 2, 3, 4, 5]
+l = []
+for i in arr:
+    for j in arr:
+        a = [i, j]
+        b = [j, i]
+        if i==j:
+            continue
+        elif b in l:
+            continue
+        else:
+            l.append(a)
+print(l)
