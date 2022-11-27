@@ -1,0 +1,30 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def takeInput():
+    s = [int(x) for x in input('enter ').split()]
+    head = None
+    secondref = False
+    pastref = None
+    for i in s:
+        if i == -1:
+            break
+        newnode = Node(i)
+        if head is None:
+            head = newnode        # only happens for teh first element in the list
+            secondref = True
+        elif secondref == True:
+            head.next = newnode
+            pastref = newnode
+            secondref= False
+        else:
+            pastref.next = newnode
+            pastref = newnode
+    return head
+head = takeInput()
+current = head
+while current is not None:
+    print(current.data)
+    current = current.next
