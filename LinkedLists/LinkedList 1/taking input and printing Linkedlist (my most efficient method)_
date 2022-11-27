@@ -1,0 +1,26 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+def takeinput():
+    s = [int(x) for x in input().split()]
+    head = None
+    tail = None
+    for i in s:
+        if i == -1:
+            break
+        newnode = Node(i)
+        if head is None:
+            head =  newnode
+            tail = head
+        else:
+            tail.next = newnode
+            tail = newnode
+    return head
+def printLL(head):
+    while head is not None:
+        print(head.data, end=" -> ")
+        head = head.next
+    print("None")
+head = takeinput()
+printLL(head)
