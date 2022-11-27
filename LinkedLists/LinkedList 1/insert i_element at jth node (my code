@@ -1,0 +1,46 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+def printLL(head):
+    while head is not None:
+        print(head.data, end=" -> ")
+        head = head.next
+    print("None")
+def takeinput():
+    s = [int(x) for x in input('enter space separated elements: ').split()]
+    head = None
+    tail = None
+    for i in s:
+        if i == -1:
+            break
+        newnode = Node(i)
+        if head is None:
+            head =  newnode
+            tail = head
+        else:
+            tail.next = newnode
+            tail = newnode
+    return head
+
+def insert(head, i,j):   # insert i at jth position
+    count = 0
+    fix = head
+    while head is not None and count<=j:
+        if j == 0:
+            newnode = Node(i)
+            newnode.next = head
+            fix = newnode
+        elif count+1 == j:
+            newnode = Node(i)
+            newnode.next = head.next
+            head.next = newnode
+            break
+        count+=1
+        head = head.next
+    return fix
+head = takeinput()
+i = int(input('enter the element to be entered: '))
+j = int(input('enter the position of element to be entered: '))
+head = insert(head, i, j)
+printLL(head)
