@@ -1,0 +1,37 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+def printLL(head):
+    while head is not None:
+        print(head.data, end=" -> ")
+        head = head.next
+def takeinput():
+    s = [int(x) for x in input('enter space separated elements: ').split()]
+    head = None
+    tail = None
+    for i in s:
+        if i == -1:
+            break
+        newnode = Node(i)
+        if head is None:
+            head =  newnode
+            tail = head
+        else:
+            tail.next = newnode
+            tail = newnode
+    return head
+
+def find_ith_Element(head,e):
+    count = 0
+    while head is not None and count<=e:
+        if count == e:
+            return head.data
+        head = head.next
+        count += 1
+    return None
+
+
+head = takeinput()
+e = int(input('enter ith element of LL to be found: '))
+print(find_ith_Element(head, e))
