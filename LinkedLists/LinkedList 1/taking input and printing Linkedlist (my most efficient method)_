@@ -3,7 +3,7 @@ class Node:
         self.data = data
         self.next = None
 def takeinput():
-    s = [int(x) for x in input().split()]
+    s = [int(x) for x in input('enter elements of linkedlist ').split()]
     head = None
     tail = None
     for i in s:
