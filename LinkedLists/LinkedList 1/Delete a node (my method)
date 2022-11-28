@@ -1,0 +1,48 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+def printLL(head):
+    while head is not None:
+        print(head.data, end=" -> ")
+        head = head.next
+    print("None")
+def takeinput():
+    s = [int(x) for x in input('enter space separated elements: ').split()]
+    head = None
+    tail = None
+    for i in s:
+        if i == -1:
+            break
+        newnode = Node(i)
+        if head is None:
+            head =  newnode
+            tail = head
+        else:
+            tail.next = newnode
+            tail = newnode
+    return head
+
+def delete(head, n):      # n = node to be deleted
+    count = 0
+    fix = head
+    curr = head
+    prev = None
+    while head is not None and count<=n:
+        if n == 0:
+            fix = head.next
+            return fix
+
+        if count == n:
+            prev.next = curr.next
+            return fix
+
+        prev = curr
+        curr = curr.next
+        count +=1
+    return fix
+
+head = takeinput()
+d = int(input('enter the node you want to delete: '))
+head = delete(head, d)
+printLL(head)
