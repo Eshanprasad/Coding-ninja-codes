@@ -20,7 +20,8 @@ def printTreeDeailed(root):
     if root.left is not None:
         print("L", root.left.data, end=", ")
     if root.right is not None:
-        print("R", root.right.data)
+        print("R", root.right.data, end="")
+    print()
     printTreeDeailed(root.left)
     printTreeDeailed(root.right)
 bt1 = BinaryTreeNode(1)
