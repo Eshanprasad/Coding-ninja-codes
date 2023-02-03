@@ -14,6 +14,7 @@ def printTreeDeailed(root):
         return
     if root.left == None and root.right == None:
         print(root.data)
+        return
     else:
         print(root.data, end=" : ")
     if root.left is not None:
