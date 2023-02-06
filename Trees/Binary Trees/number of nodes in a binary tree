@@ -1,0 +1,25 @@
+class BinaryTree:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+def print_numberof_nodes(root):
+    if root == None:
+        return 0
+    left_count = print_numberof_nodes(root.left)
+    right_count = print_numberof_nodes(root.right)
+    return 1+ left_count + right_count
+
+btn1 = BinaryTree(1)
+btn2 = BinaryTree(2)
+btn3 = BinaryTree(3)
+btn4 = BinaryTree(4)
+btn5 = BinaryTree(5)
+btn6 = BinaryTree(6)
+btn7 = BinaryTree(7)
+btn8 = BinaryTree(8)
+btn1.left, btn1.right = btn2, btn3
+btn2.left, btn2.right = btn4, btn5
+btn3.left, btn3.right = btn6, btn7
+btn7.right = btn8
+print(print_numberof_nodes(btn1))
