@@ -1,0 +1,33 @@
+class Binary_tree:
+    def __init__(self, data):
+        self.data = data
+        self.left  = None
+        self.right = None
+        
+def min_BT(root):
+    if root==None:
+        return
+    left_min = min_BT(root.left)
+    right_min = min_BT(root.right)
+    if left_min!=None and right_min!=None:
+        return min(root.data, left_min, right_min)
+    elif left_min!=None and right_min==None:
+        return min(root.data, left_min)
+    elif left_min==None and right_min!=None:
+        return min(root.data, right_min)
+    elif left_min==None and right_min==None:
+        return root.data
+        
+bt1 = Binary_tree(1)
+bt2 = Binary_tree(2)
+bt3 = Binary_tree(3)
+bt4 = Binary_tree(4)
+bt5 = Binary_tree(5)
+bt6 = Binary_tree(6)
+bt7 = Binary_tree(7)
+bt8 = Binary_tree(8)
+bt1.left, bt1.right =bt2, bt3
+bt2.left, bt2.right =bt4, bt5
+bt3.left, bt3.right =bt6, bt7
+bt7.right = bt8
+print(min_BT(bt1))
