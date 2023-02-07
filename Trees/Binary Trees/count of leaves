@@ -1,0 +1,29 @@
+class Binary_tree:
+    def __init__(self, data):
+        self.data = data
+        self.left  = None
+        self.right = None
+
+def leafs_BT(root):                                            # gives number of leaves
+    if  root!=None and root.left==None and root.right == None:
+        return 1
+    if root==None:
+        return 0
+    left_leafs = leafs_BT(root.left)
+    right_leafs = leafs_BT(root.right)
+    return left_leafs + right_leafs
+
+
+bt1 = Binary_tree(1)
+bt2 = Binary_tree(2)
+bt3 = Binary_tree(3)
+bt4 = Binary_tree(4)
+bt5 = Binary_tree(5)
+bt6 = Binary_tree(6)
+bt7 = Binary_tree(7)
+bt8 = Binary_tree(8)
+bt1.left, bt1.right =bt2, bt3
+bt2.left, bt2.right =bt4, bt5
+bt3.left, bt3.right =bt6, bt7
+bt7.right = bt8
+print(leafs_BT(bt1))
