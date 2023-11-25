@@ -1,0 +1,38 @@
+# Trying my own way of implementing stack using linkedlist (knowing the Algorithm)
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class Stack:
+    head = None
+    count = 0
+    def push(self, data):
+        new_node = Node(data)
+        if Stack.head is None:
+            Stack.head = new_node
+            Stack.count+=1
+        else:
+            new_node.next = Stack.head
+            Stack.head = new_node
+            Stack.count+=1
+
+    def pop(self):
+        if Stack.head is None:
+            print("Stack is Empty")
+            return
+        Stack.head = Stack.head.next
+        Stack.count-=1
+
+    def size(self):
+        return Stack.count
+
+    def top(self):
+        if Stack.count==0:
+            print("Stack is Empty!")
+            return
+        return Stack.head.data
+
+    def isEmpty(self):
+        return Stack.count==0
