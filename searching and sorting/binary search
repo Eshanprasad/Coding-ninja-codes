@@ -12,7 +12,5 @@ while start<=end:
         end = mid-1
     elif li[mid]<target:
         start = mid+1
-    else:
-        print("number is not in the list")
 else:
     print("not found")
