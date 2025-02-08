@@ -1,0 +1,59 @@
+In Python, heap operations are handled using the heapq module, which provides a way to implement a min-heap (by default). A heap is a special tree-based data structure that satisfies the heap property:
+
+Min-Heap: The smallest element is at the root.
+Max-Heap: The largest element is at the root (can be implemented using negative values in heapq).
+Common Heap Operations in Python (heapq Module)
+1. Creating a Min-Heap
+import heapq
+heap = []
+heapq.heappush(heap, 10)
+heapq.heappush(heap, 5)
+heapq.heappush(heap, 15)
+print(heap)  # Output: [5, 10, 15] (Heap structure)
+
+2. Pushing an Element (heappush)
+heapq.heappush(heap, 3)
+print(heap)  # Output: [3, 5, 15, 10] (heap maintains order)
+
+3. Popping the Smallest Element (heappop)
+smallest = heapq.heappop(heap)
+print(smallest)  # Output: 3 (smallest element)
+print(heap)      # Output: [5, 10, 15]
+
+4. Getting the Smallest Element Without Removing (heap[0])
+print(heap[0])  # Output: 5 (smallest element)
+
+5. Converting a List into a Heap (heapify)
+nums = [10, 20, 5, 30, 15]
+heapq.heapify(nums)
+print(nums)  # Output: [5, 15, 10, 30, 20] (converted into a min-heap)
+
+6. Pushing & Popping in One Step (heappushpop)
+heapq.heappushpop(heap, 1)
+print(heap)  # Output: [5, 10, 15] (1 is pushed, but immediately removed)
+
+7. Replacing the Smallest Element (heapreplace)
+heapq.heapreplace(heap, 8)
+print(heap)  # Output: [8, 10, 15] (5 is removed, 8 is added)
+
+8. Getting n Smallest/Largest Elements (nsmallest & nlargest)
+heap = [10, 5, 20, 30, 15]
+heapq.heapify(heap)
+print(heapq.nsmallest(2, heap))  # Output: [5, 10]
+print(heapq.nlargest(2, heap))  # Output: [30, 20]
+
+
+  
+Max-Heap Implementation
+Python’s heapq only supports min-heaps, but you can create a max-heap by storing negative values.
+
+max_heap = []
+heapq.heappush(max_heap, -10)
+heapq.heappush(max_heap, -20)
+heapq.heappush(max_heap, -5)
+print(-heapq.heappop(max_heap))  # Output: 20 (largest element)
+Use Cases of Heaps
+Priority Queues (processing tasks by priority)
+Sorting (Heap Sort)
+Finding Kth Largest/Smallest Elements (efficiently getting top elements)
+Graph Algorithms (Dijkstra’s shortest path, Prim’s algorithm)
